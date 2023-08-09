@@ -89,7 +89,7 @@ body::-webkit-scrollbar {
     max-height: 4rem;
     /*border-bottom: 0.0625rem solid #eaeaea;*/
     padding-bottom: 0.5rem;
-    border-bottom: 0.0625rem solid black;
+    border-bottom: 0.0625rem solid red;
 
     align-items: flex-end;
     display: flex;
@@ -152,7 +152,7 @@ body::-webkit-scrollbar {
     padding-left: 0.5rem;
     margin-left: 0.5rem;
     box-sizing: border-box;
-    border-left: 0.0625rem solid black;
+    border-left: 0.0625rem solid red;
 }
 
 #searchBox {
@@ -179,8 +179,8 @@ body::-webkit-scrollbar {
 #searchBox > .search > label{
     width: 75%;
     height: 3rem;
-    border: 0.0625rem solid forestgreen;
-    border-radius: 2rem;
+    border: 0.125rem solid red;
+    border-radius: 1rem;
     align-items:center;
     display:flex;
     flex-direction: row;
@@ -206,9 +206,7 @@ body::-webkit-scrollbar {
     height: 2rem;
     padding-left: 1rem;
     box-sizing: border-box;
-    border-left: 0.0625rem solid forestgreen;
-
-    border-radius: 0 2rem 2rem 0;
+    border-left: 0.125rem solid red;
 }
 
 #searchBox > .search > label:hover {
@@ -225,21 +223,104 @@ body::-webkit-scrollbar {
     height: 100%;
     min-height: 30rem;
     max-height: 30rem;
-    padding: 1rem 0;
+    /*padding: 1rem 0;*/
     box-sizing: border-box;
 
-    position: relative; /* 변경: 슬라이드 컨테이너를 상대적으로 위치 설정 */
+    background-image: url("../images/home/banner01.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-
-    opacity: 0; /* 변경: 초기에 투명하게 설정 */
-    transition: opacity 1s ease-in-out;
+    transition: min-height 0.5s ease-in-out;
 }
 
 #bannerContainer.visible {
     min-height: 0;
-    display: block; /* 변경: display 속성을 block으로 변경 */
-    opacity: 1; /* 변경: 슬라이드가 나타날 때 투명도를 조정 */
+    opacity: 0;
+    display: none;
     border: none;
+}
+
+#menuContainer {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+#menuContainer > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#menuContainer > ul > .icon + .icon {
+    margin-left: 1rem;
+}
+#menuContainer > ul > .icon > a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#menuContainer > ul > .icon > a > img {
+    height: 10rem;
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+}
+#menuContainer > ul > .icon > a > span {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#footer {
+    width: 100%;
+    height: 30%;
+    min-height: 12rem;
+    max-height: 12rem;
+    background-color: #ffffff;
+
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#footer > .sub_logo {
+    width: 40%;
+    height: 100%;
+    /*overflow: hidden;*/
+
+    align-items: center;
+    display: flex;
+    /*flex-direction: column;*/
+    justify-content: center;
+}
+
+#footer > .sub_logo > img {
+    height: 10rem;
+}
+
+#footer > .etc{
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+#footer > .etc > label > a + a{
+    margin-left: 5rem;
+}
+
+#footer > .etc > label > a > img {
+    width: 5rem;
+    height: 5rem;
+}
+
+#footer > .etc > ul {
+    margin-left: 1rem;
+}
+
+#footer > .etc > ul > li {
+    font-size: 1.25rem;
 }
