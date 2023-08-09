@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>K Foot Glance</title>
+    <link rel="stylesheet" th:href="@{/resources/stylesheets/base.css}">
+    <link rel="icon" th:href="@{/resources/images/logo.png}" type="image/png">
+</head>
+<body>
+<header id="headLine">
+    <div class="logo" th:if="${session.user == null}">
+        <a th:href="@{/}">
+            <img th:src="@{/resources/images/logo2.png}" alt="">
+        </a>
+    </div>
+    <div class="logo" th:if="${session.user != null}">
+        <a th:if="${session.user.getAuthority() != 2}" th:href="@{/}">
+            <img th:src="@{/resources/images/logo2.png}" alt="">
+        </a>
+        <a th:if="${session.user.getAuthority() == 2}" th:href="@{/entrepreneur}">
+            <img th:src="@{/resources/images/logo2.png}" alt="">
+        </a>
+    </div>
+    <div class="info_menu" >
+        <a class="nickname" th:if="${session.user != null}" th:href="@{/mypage/modify}">
+            <span th:text="${session.user['nickname']}"></span>
+        </a>
+        <span th:if="${session.user != null}">님</span>
+        <a th:if="${session.user == null}" th:href="@{/user/login}">
+            <img th:src="@{/resources/images/account.png}" alt="">
+        </a>
+        <a th:if="${session.user != null}" class="logout" href="#">로그아웃</a>
+        <a th:if="${session.user != null}" th:href="@{/mypage/modify}">마이페이지</a>
+        <a th:href="@{/help/faq}">
+            <img th:src="@{/resources/images/support.png}" alt="">
+        </a>
+    </div>
+</header>
+<div id="searchBox">
+    <div class="search">
+        <label>
+            <div>
+                <img width="24" height="24" src="https://img.icons8.com/material-outlined/24/228B22/search--v1.png" alt="search--v1"/>
+            </div>
+            <input id="searchContent" type="text" placeholder="검색">
+        </label>
+    </div>
+</div>
+<div id="bannerContainer">
+    배너가 들어가야할 꺼임
+</div>
+<nav>
+    여긴 메뉴 들어갈꺼임
+    1. 프리미어리그
+    2. 라리가
+    3. 세리아
+    4. 분데스
+    5. 리그앙
+    6. 자유 게시판
+</nav>
+<div>
+    여기는 메인
+    아마 여러가지 들어가긴할텐데 리그 관련 들어갈듯
+    아니면 선수 관련
+</div>
+
+</body>
+</html>
