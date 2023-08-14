@@ -155,13 +155,30 @@
         </table>
     </div>
     <div class="login_div">
+        <h2>프로필</h2>
         <div class="login_user" th:if="${session.user == null}">
             <div class="login_btn">
-                <label>
-                    <img th:src="@{/resources/images/user.png}" alt="">
-                    <input type="button" value="로그인">
-                </label>
+                <a th:href="@{/user/login}">
+                    로그인
+                    <img th:src="@{/resources/images/login.png}" alt="">
+                </a>
                 <img th:src="@{/resources/images/warning.png}" alt="">
+                <span>로그인 후 이용해 주세요.</span>
+            </div>
+            <div class="register_recover">
+                <a href="">
+                    <span>회원가입</span>
+<!--                    <span>></span>-->
+                    <img th:src="@{/resources/images/next.png}" alt="">
+                </a>
+                <a href="">
+                    <span>아이디 찾기</span>
+                    <img th:src="@{/resources/images/next.png}" alt="">
+                </a>
+                <a href="">
+                    <span>비밀번호 찾기</span>
+                    <img th:src="@{/resources/images/next.png}" alt="">
+                </a>
             </div>
         </div>
         <div class="not_login" th:if="${session.user != null}">

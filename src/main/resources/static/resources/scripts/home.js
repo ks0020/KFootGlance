@@ -36,16 +36,3 @@ window.onload = () => {
     startSlideShow();
 };
 
-// const leagueInputs = document.querySelectorAll('[name="league"]');
-//
-// leagueInputs.forEach(input => {
-//     input.addEventListener('input', function () {
-//         const leagueLabels = document.querySelectorAll('label');
-//         leagueLabels.forEach(label => {
-//             label.classList.remove('checked');
-//         });
-//         const label = this.closest('label');
-//         label.classList.add('checked');
-//     });
-// });
-

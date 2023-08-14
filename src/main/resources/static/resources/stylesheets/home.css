@@ -15,10 +15,10 @@
     padding: 0 0 2rem 0;
     box-sizing: border-box;
 }
-
 #center > .ranking {
     padding: 0 2rem 0 0;
 }
+
 
 #center > .ranking > div > .league_list {
     position: relative;
@@ -59,15 +59,24 @@
 
 #center > div > div > h2 {
     width: 100%;
-    font-size: 2rem;
-    font-weight: 600;
     box-sizing: border-box;
+    font-size: 1.75rem;
+    font-weight: 600;
+    padding-left: 1rem;
+}
+
+#center > .login_div > h2 {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.75rem;
+    font-weight: 600;
+    padding-left: 1rem;
 }
 
 #center > div > table {
     margin-top: 0.25rem;
     width: 100%;
-    border-top: 0.5rem solid red;
+    border-top: 0.25rem solid red;
 }
 
 #center > div > table > thead > tr,
@@ -89,21 +98,80 @@
 #center > .login_div {
     width: 100%;
     height: 100%;
-    border: 0.0125rem solid;
+}
+
+#center > .login_div > h2 {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.75rem;
+    font-weight: 600;
+    padding-left: 1rem;
+    padding-top: 1.5rem;
+}
+
+#center > .login_div > .login_user {
+    padding: 0;
+    border-top: 0.0625rem solid #c6c6c6;
+
+
+    display: flex;
+    flex-direction: row;
 }
 
 #center > .login_div > .login_user > .login_btn {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#center > .login_div > .login_user > .login_btn > label > img {
-    width: 2.5rem;
+#center > .login_div > .login_user > .login_btn > a {
+    width: 75%;
+    background-color: #e9e9ef;
+    color: #8583ab;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 1rem 0;
+    margin: 0.5rem;
+
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#center > .login_div > .login_user > .login_btn > a > img {
+    width: 3rem;
+    padding-left: 0.75rem;
 }
 
 #center > .login_div > .login_user > .login_btn > img {
     width: 7.5rem;
+}
+
+#center > .login_div > .login_user > .register_recover {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#center > .login_div > .login_user > .register_recover > a {
+    background-color: #e9e9ef;
+    width: 75%;
+    padding: 1rem 0;
+    margin: 0.5rem;
+
+    display: flex;
+    justify-content: space-around;
+}
+
+#center > .login_div > .login_user > .register_recover > a > span {
+    color: #8583ab;
+}
+
+#center > .login_div > .login_user > .register_recover > a > img {
+    width: 1rem;
 }
 
 #board {
@@ -138,9 +206,10 @@
 
 #board > div > label > h2 {
     width: 100%;
-    font-size: 2rem;
-    font-weight: 600;
     box-sizing: border-box;
+    font-size: 1.75rem;
+    font-weight: 600;
+    padding-left: 1rem;
 }
 
 #board > div > label > a {
@@ -154,7 +223,7 @@
 #board > div > table {
     margin-top: 0.25rem;
     width: 100%;
-    border-top: 0.5rem solid red;
+    border-top: 0.25rem solid red;
 }
 
 #board > div > table > thead > tr,
