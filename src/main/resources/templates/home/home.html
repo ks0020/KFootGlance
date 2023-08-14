@@ -52,7 +52,6 @@
     </div>
 </div>
 <div id="bannerContainer">
-
 </div>
 <div id="menuContainer">
     <ul>
@@ -88,6 +87,88 @@
         </li>
     </ul>
 </div>
+<div id="center">
+    <div class="ranking">
+        <div>
+            <h2>리그 순위</h2>
+            <div class="league_list">
+                <label>
+                    <input checked name="league" type="radio">
+                    <span>프리미어리그</span>
+                </label>
+                <label>
+                    <input name="league" type="radio">
+                    <span>라리가</span>
+                </label>
+                <label>
+                    <input name="league" type="radio">
+                    <span>분데스리그</span>
+                </label>
+                <label>
+                    <input name="league" type="radio">
+                    <span>세리아A</span>
+                </label>
+                <label>
+                    <input name="league" type="radio">
+                    <span>리그앙</span>
+                </label>
+            </div>
+        </div>
+        <table>
+            <thead>
+            <tr>
+                <th>순위</th>
+                <th>팀명</th>
+                <th>경기수</th>
+                <th>승</th>
+                <th>무</th>
+                <th>패</th>
+                <th>득</th>
+                <th>실</th>
+                <th>승점</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>뉴캐슬</td>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+                <td>0</td>
+                <td>5</td>
+                <td>1</td>
+                <td>3</td>
+            </tr>
+            <!--            <tr>-->
+            <!--                <td></td>-->
+            <!--                <td></td>-->
+            <!--                <td></td>-->
+            <!--                <td></td>-->
+            <!--                <td></td>-->
+            <!--                <td></td>-->
+            <!--                <td></td>-->
+            <!--                <td></td>-->
+            <!--                <td></td>-->
+            <!--            </tr>-->
+            </tbody>
+        </table>
+    </div>
+    <div class="login_div">
+        <div class="login_user" th:if="${session.user == null}">
+            <div class="login_btn">
+                <label>
+                    <img th:src="@{/resources/images/user.png}" alt="">
+                    <input type="button" value="로그인">
+                </label>
+                <img th:src="@{/resources/images/warning.png}" alt="">
+            </div>
+        </div>
+        <div class="not_login" th:if="${session.user != null}">
+            로그인 후
+        </div>
+    </div>
+</div>
 <div id="board">
     <div class="korean_leaguer">
         <label>
@@ -97,7 +178,7 @@
         <table>
             <thead>
             <tr>
-                <th>구분</th>
+                <th>순번</th>
                 <th>이름</th>
                 <th>리그</th>
                 <th>경기</th>
@@ -106,12 +187,19 @@
             </thead>
             <tbody>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>1</td>
+                <td>손흥민</td>
+                <td>프리미어리그</td>
+                <td>토트넘 vs 브랜드포드</td>
+                <td>0/0</td>
             </tr>
+<!--            <tr>-->
+<!--                <td></td>-->
+<!--                <td></td>-->
+<!--                <td></td>-->
+<!--                <td></td>-->
+<!--                <td></td>-->
+<!--            </tr>-->
             </tbody>
         </table>
     </div>
@@ -123,7 +211,7 @@
         <table>
             <thead>
             <tr>
-                <th>구분</th>
+                <th>순번</th>
                 <th>리그</th>
                 <th>제목</th>
                 <th>작성일</th>
@@ -132,12 +220,19 @@
             </thead>
             <tbody>
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>1</td>
+                <td>프리미어리그</td>
+                <td>손흥민 폼뮈쳐따</td>
+                <td>2023-08-14</td>
+                <td>9999</td>
             </tr>
+<!--            <tr>-->
+<!--                <td></td>-->
+<!--                <td></td>-->
+<!--                <td></td>-->
+<!--                <td></td>-->
+<!--                <td></td>-->
+<!--            </tr>-->
             </tbody>
         </table>
     </div>

@@ -68,9 +68,6 @@ body {
     margin: 0 auto;
     overflow: scroll;
 
-    border-left: 0.125rem solid #bdbdbd;
-    border-right : 0.125rem solid #bdbdbd;
-
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -82,13 +79,11 @@ body::-webkit-scrollbar {
 }
 
 #headLine {
-    /*background-color: #D2E9E9;*/
     width: 100%;
     height: 100%;
-    min-height: 4.5rem;
-    max-height: 4.5rem;
-    /*border-bottom: 0.0625rem solid #eaeaea;*/
-    padding-bottom: 0.5rem;
+    min-height: 3rem;
+    max-height: 3rem;
+    padding-bottom: 0.25rem;
     border-bottom: 0.0625rem solid red;
 
     align-items: flex-end;
@@ -111,7 +106,6 @@ body::-webkit-scrollbar {
     min-width: 9rem;
     height: 100%;
     transform: translateY(-2.5%);
-    /*margin-left: 1rem;*/
     align-items: flex-start;
     display: flex;
     flex-direction: column;
@@ -119,7 +113,7 @@ body::-webkit-scrollbar {
 }
 
 #headLine > .logo > a > img {
-    height: 3rem;
+    height: 2rem;
 }
 
 #headLine > .info_menu {
@@ -134,8 +128,8 @@ body::-webkit-scrollbar {
 }
 
 #headLine > .info_menu > a > img{
-    height: 3.125rem;
-    width: 3.125rem;
+    height: 2rem;
+    width: 2rem;
 }
 
 #headLine > .info_menu > .nickname{
@@ -223,7 +217,6 @@ body::-webkit-scrollbar {
     height: 100%;
     min-height: 30rem;
     max-height: 30rem;
-    /*padding: 1rem 0;*/
     box-sizing: border-box;
 
     background-image: url("../images/home/banner01.jpg");
@@ -287,11 +280,9 @@ body::-webkit-scrollbar {
 #footer > .sub_logo {
     width: 40%;
     height: 100%;
-    /*overflow: hidden;*/
 
     align-items: center;
     display: flex;
-    /*flex-direction: column;*/
     justify-content: center;
 }
 
