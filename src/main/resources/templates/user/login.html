@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>K Foot Glance</title>
+    <link rel="icon" th:href="@{/resources/images/logo.png}" type="image/png">
+    <link rel="stylesheet" th:href="@{/resources/stylesheets/user/login.css}">
+</head>
+<body>
+<div id="loginContainer">
+    <header class="logo_box">
+        <div>
+            <a th:href="@{/}">
+                <img th:src="@{/resources/images/image-logo.png}" alt="">
+            </a>
+        </div>
+    </header>
+    <div class="login_div">
+        <div class="login_container">
+            <input class="input" maxlength="50" name="userId" placeholder="아이디" type="text">
+            <input class="input" maxlength="50" name="password" placeholder="비밀번호" type="password">
+        </div>
+        <div class="warning-container">
+            <span class="warning"></span>
+        </div>
+        <div class="button-container">
+            <input type="submit">
+        </div>
+    </div>
+</div>
+</body>
+</html>

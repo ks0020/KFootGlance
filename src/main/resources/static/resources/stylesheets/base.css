@@ -85,8 +85,8 @@ body::-webkit-scrollbar {
     /*background-color: #D2E9E9;*/
     width: 100%;
     height: 100%;
-    min-height: 4rem;
-    max-height: 4rem;
+    min-height: 4.5rem;
+    max-height: 4.5rem;
     /*border-bottom: 0.0625rem solid #eaeaea;*/
     padding-bottom: 0.5rem;
     border-bottom: 0.0625rem solid red;
@@ -262,7 +262,7 @@ body::-webkit-scrollbar {
 }
 
 #menuContainer > ul > .icon > a > img {
-    height: 10rem;
+    height: 7.5rem;
     border-radius: 1rem;
     margin-bottom: 0.5rem;
 }

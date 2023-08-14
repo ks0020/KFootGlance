@@ -14,12 +14,12 @@
 <body>
 <header id="headLine">
     <div class="logo" th:if="${session.user == null}">
-        <a th:href="@{/}">
+        <a th:href="@{/static}">
             <img th:src="@{/resources/images/logo2.png}" alt="">
         </a>
     </div>
     <div class="logo" th:if="${session.user != null}">
-        <a th:if="${session.user.getAuthority() != 2}" th:href="@{/}">
+        <a th:if="${session.user.getAuthority() != 2}" th:href="@{/static}">
             <img th:src="@{/resources/images/logo2.png}" alt="">
         </a>
         <a th:if="${session.user.getAuthority() == 2}" th:href="@{/entrepreneur}">
@@ -32,12 +32,12 @@
         </a>
         <span th:if="${session.user != null}">님</span>
         <a th:if="${session.user == null}" th:href="@{/user/login}">
-            <img th:src="@{/resources/images/account.png}" alt="">
+            <img th:src="@{/resources/images/user.png}" alt="">
         </a>
         <a th:if="${session.user != null}" class="logout" href="#">로그아웃</a>
         <a th:if="${session.user != null}" th:href="@{/mypage/modify}">마이페이지</a>
         <a th:href="@{/help/faq}">
-            <img th:src="@{/resources/images/support.png}" alt="">
+            <img th:src="@{/resources/images/inquiry.png}" alt="">
         </a>
     </div>
 </header>
@@ -88,12 +88,38 @@
         </li>
     </ul>
 </div>
-<div id="freeBoard">
-    <label>
-        <h2>자유 게시판</h2>
-        <a href="">더 보기</a>
-    </label>
-    <div>
+<div id="board">
+    <div class="korean_leaguer">
+        <label>
+            <h2>한국 선수 활약상</h2>
+            <a href="">더 보기</a>
+        </label>
+        <table>
+            <thead>
+            <tr>
+                <th>구분</th>
+                <th>이름</th>
+                <th>리그</th>
+                <th>경기</th>
+                <th>득점/도움</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="free_board">
+        <label>
+            <h2>자유 게시판</h2>
+            <a href="">더 보기</a>
+        </label>
         <table>
             <thead>
             <tr>

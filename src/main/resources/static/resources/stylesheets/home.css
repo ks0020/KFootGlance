@@ -1,16 +1,26 @@
 @charset "UTF-8";
 
-#freeBoard {
+#board {
     width: 100%;
     border-top: 0.0625rem solid red;
 
     align-items: flex-start;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
 }
 
-#freeBoard > label {
+#board > div {
+    width: 100%;
+    padding: 0 0 2rem 0;
+    box-sizing: border-box;
+}
+
+#board > .korean_leaguer {
+    padding: 0 2rem 0 0;
+}
+
+#board > div > label {
     width: 100%;
     padding: 1.5rem 0 0 0;
     box-sizing: border-box;
@@ -21,14 +31,14 @@
     justify-content: flex-start;
 }
 
-#freeBoard > label > h2 {
+#board > div > label > h2 {
     width: 100%;
     font-size: 2rem;
     font-weight: 600;
     box-sizing: border-box;
 }
 
-#freeBoard > label > a {
+#board > div > label > a {
     width: 100%;
     color: #bdbdbd;
     font-size: 1.25rem;
@@ -36,35 +46,29 @@
     text-align: end;
 }
 
-#freeBoard > div {
-    width: 100%;
-    padding: 0 0 2rem 0;
-    box-sizing: border-box;
-}
-
-#freeBoard > div > table {
+#board > div > table {
     margin-top: 0.25rem;
     width: 100%;
     border-top: 0.5rem solid red;
 }
 
-#freeBoard > div > table > thead > tr,
-#freeBoard > div > table > tbody > tr {
-    height: 3rem;
+#board > div > table > thead > tr,
+#board > div > table > tbody > tr {
+    height: 2.5rem;
 }
 
-#freeBoard > div > table > tbody > tr:hover{
+#board > div > table > tbody > tr:hover{
     background-color: #eaeaea;
     filter: brightness(90%);
     cursor: pointer;
 }
 
-#freeBoard > div > table > thead > tr > th {
+#board > div > table > thead > tr > th {
     border-bottom: 0.0625rem solid;
     text-align: center;
 }
 
-#freeBoard > div > table > tbody > tr > td {
+#board > div > table > tbody > tr > td {
     border-bottom: 0.0625rem solid #eaeaea;
     text-align: center;
     font-size: 0.9rem;
