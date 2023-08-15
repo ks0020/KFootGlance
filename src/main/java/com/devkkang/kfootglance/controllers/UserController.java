@@ -21,7 +21,7 @@ public class UserController {
     @RequestMapping(value = "/recover",
             method = RequestMethod.GET,
             produces = MediaType.TEXT_HTML_VALUE)
-    public ModelAndView getRecoverId() {
+    public ModelAndView getRecover() {
         ModelAndView modelAndView = new ModelAndView("user/recover");
         return modelAndView;
     }
@@ -29,7 +29,7 @@ public class UserController {
     @RequestMapping(value = "/reset",
             method = RequestMethod.GET,
             produces = MediaType.TEXT_HTML_VALUE)
-    public ModelAndView getRecoverPassword() {
+    public ModelAndView getReset() {
         ModelAndView modelAndView = new ModelAndView("user/reset");
         return modelAndView;
     }
