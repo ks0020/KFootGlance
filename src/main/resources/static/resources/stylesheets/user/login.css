@@ -6,97 +6,183 @@ html {
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif
 }
 
-body {
-    margin: 0;
+ol, ul {
+    list-style-type: none;
+    margin-block: unset;
+    margin-inline: unset;
+    padding-block: unset;
+    padding-inline: unset;
+}
 
-    align-items:center;
-    display:flex;
-    flex-direction: column;
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body {
+    height: 100vh; /* 화면 높이에 맞게 설정 */
+    margin: 0;
+    background-color: #F6F1F1;
+
+
+    display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 #loginContainer {
-    max-width: 492px;
-    min-width: 360px;
-    min-height: 100%;
-    padding: 0 16px 200px;
-    margin: 0 auto;
-}
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
 
-#loginContainer > .logo_box {
-    min-width: 20.5rem;
-
-    display: flex;
-    justify-content: center;
-}
-
-#loginContainer > .logo_box > label > a > img{
-    width: 25rem;
-}
-
-#loginContainer > .login_div {
-    width: inherit;
-
-    align-items: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+/*region logo*/
+#loginContainer > .logo_box {
+    width: 100%;
+
+    display: flex;
     justify-content: center;
+}
+
+#loginContainer > .logo_box > a > img{
+    width: 25rem;
+}
+/*endregion*/
+
+#loginContainer > .login_div {
+    width: 100%;
+    height: auto;
+
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 2rem;
 }
 
 #loginContainer > .login_div > .login_container {
     width: inherit;
-    margin-top: 5rem;
+    height: 11rem;
 
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-
 }
 
 #loginContainer > .login_div > .login_container > .input {
-    padding: 1.125rem 0.75rem;
-    height: 1.125rem;
     width: 25rem;
+
+    border: none;
+    box-shadow: 0 0 0.25rem rgba(255, 0, 0, 0.5);
     font-size: 1.125rem;
-    border: 0.125rem solid #e5e8eb;
-    transition: border-color .15s linear;
     font-weight: 700;
-    outline: 0;
+    padding: 1.125rem 0.75rem;
+    transition: border-color .15s linear;
+    outline: none;
+    box-sizing: border-box;
+    margin: 0;
 
-
+    position: relative;
+    top: 25%;
+    transform: translateY(-50%);
 }
 
 #loginContainer > .login_div > .login_container > .input:focus {
-    outline: 0.125rem solid red;
     border: none;
 }
 
 #loginContainer > .login_div > .login_container > .input:first-child {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 0;
 }
 
-#loginContainer > .login_div > .warning-container {
-    display: flex;
-    justify-content: center;
+#loginContainer > .login_div > .login_container > .input:nth-child(2) {
+    margin-top: 1rem;
+    position: absolute;
 }
 
-#loginContainer > .login_div > .warning-container.invalid {
+
+#loginContainer > .login_div > .warning {
+    height: 0;
+
+    color: #ef5350;
+    font-size: 0.9rem;
+    overflow: hidden;
+    padding-top: 0;
+    text-align: center;
+    transition: height 0.3s ease-in-out;
+}
+
+#loginContainer > .login_div > .warning.visible {
     height: 1.5rem;
     padding-top: 0.5rem;
 }
 
-#loginContainer > .login_div > .warning-container.invalid > .warning {
-    max-height: 0;
-    color: #ef5350;
-    font-size: 0.9rem;
-    text-align: center;
-    padding-top: 0;
+#loginContainer > .login_div > .button-container {
+    /*width: 100%;*/
+    display: flex;
+    justify-content: center;
 }
 
-#loginContainer > .login_div > .warning-container.invalid > .warning.visible {
-    max-height: 3rem;
-    text-align: center;
+#loginContainer > .login_div > .button-container > .login-button {
+    width: 25rem;
+    height: 3rem;
+    background-color: #e9e9ef;
+    border: none;
+    box-shadow: 0 0 0.25rem rgba(255, 0, 0, 0.5);
+    border-radius: 0.5rem;
+    color: #8583ab;
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-top: 1.25rem;
 }
+
+#loginContainer > .login_div > .registerEndRecover{
+    width: 28.75rem;
+    margin: 0 auto;
+    padding: 1.25rem 0 2.5rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#loginContainer > .login_div > .registerEndRecover > li {
+    position: relative;
+    display: inline-block;
+
+    padding: 0 1rem;
+}
+
+#loginContainer > .login_div > .registerEndRecover > li:not(:last-child){
+    border-right: 0.1rem solid #888;
+}
+
+#loginContainer > .login_div > .registerEndRecover > li > a{
+    display: inline-block;
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+    text-decoration: none;
+    color: #888;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
