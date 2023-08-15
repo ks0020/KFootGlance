@@ -18,4 +18,28 @@ public class UserController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/recover",
+            method = RequestMethod.GET,
+            produces = MediaType.TEXT_HTML_VALUE)
+    public ModelAndView getRecoverId() {
+        ModelAndView modelAndView = new ModelAndView("user/recover");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/reset",
+            method = RequestMethod.GET,
+            produces = MediaType.TEXT_HTML_VALUE)
+    public ModelAndView getRecoverPassword() {
+        ModelAndView modelAndView = new ModelAndView("user/reset");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/register",
+            method = RequestMethod.GET,
+            produces = MediaType.TEXT_HTML_VALUE)
+    public ModelAndView getRegister() {
+        ModelAndView modelAndView = new ModelAndView("user/register");
+        return modelAndView;
+    }
+
 }
