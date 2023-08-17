@@ -1,0 +1,199 @@
+@charset "UTF-8";
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+
+html {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background-color: #F6F1F1;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#recoverDiv > .step-1.visible,
+#recoverDiv > .step-2.visible {
+    display: block;
+}
+
+#recoverDiv > .step-1,
+#recoverDiv > .step-2 {
+    display: none;
+}
+
+/*region logo*/
+#logo {
+    box-sizing: border-box
+}
+
+#logo > a {
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+#logo > a > .logo{
+    display: block;
+    width: 15rem;
+    margin: 1.5rem 0;
+}
+/*endregion*/
+
+#recoverDiv {
+    width: 40rem;
+    height: 100%;
+
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    padding: 1rem;
+    box-shadow: 0 0 0.25rem rgba(255, 0, 0, 0.5);
+    border: 0.0125rem solid;
+}
+
+/*region choice*/
+
+.choice_container {
+    margin: 1rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0.25rem rgba(255, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.choice_container > label {
+    width: 100%;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    padding: 1rem;
+    text-align: center;
+}
+
+.choice_container > label:first-child {
+    border-radius: 0.25rem 0 0 0.25rem;
+    border-right: 0.0125rem solid rgba(255, 0, 0, 0.5);
+}
+
+.choice_container > label:last-child {
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.choice_container > label:hover{
+    filter: brightness(95%);
+}
+
+.choice_container > label:active{
+    filter: brightness(90%);
+}
+
+.choice_container > label > input{
+    display: none;
+}
+
+.choice_container > .label:has(> input[type="radio"]:checked) {
+    filter: brightness(90%);
+}
+
+/*endregion*/
+
+/*region section*/
+.section > .title-container {
+    margin-left: 1rem;
+    border-bottom: 0.0125rem solid;
+    border-top: 0.0125rem solid;
+
+    align-items: center;
+    display: flex;
+}
+
+.section > .title-container > .title {
+    color: #515151;
+}
+
+.section > .title-container > .sub_title {
+    color: #515151;
+    margin-left: 1rem;
+}
+
+.section >.recover_information {
+    width: 100%;
+    padding: 1rem 0;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.section > .recover_information > .label {
+    width: 90%;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    border: 0.0125rem solid;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.section > .recover_information > .label > .input {
+    width: 100%;
+    height: 2.5rem;
+
+    box-sizing: border-box;
+    border: none;
+    font-size: 1rem;
+    padding: 0.625rem 0.875rem;
+    outline: none;
+}
+
+.section > .recover_information > .label > .button {
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    padding: 0.625rem 0.875rem;
+    margin-left: 1rem;
+}
+
+.section > .recover_information > .warning-container {
+    height: 1.5rem;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.section > .recover_information > .warning-container > .warning{
+    color: #ef5350;
+    font-size: 0.9rem;
+}
+
+.section > .button-container {
+    justify-content: space-evenly;
+    display: flex;
+}
+
+.section > .button-container > .button {
+    width: 100%;
+    height: 3rem;
+    margin: 0 1rem;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #8583ab;
+    background-color: #e9e9ef;
+    border: none;
+    box-shadow: 0 0 0.25rem rgba(255, 0, 0, 0.5);
+    border-radius: 0.5rem;
+}
+
+.section > .button-container > .button:hover {
+    cursor: pointer;
+    filter: brightness(95%);
+}
+/*endregion*/

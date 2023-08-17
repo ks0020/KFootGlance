@@ -7,8 +7,92 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>K Foot Glance</title>
     <link rel="icon" th:href="@{/resources/images/logo.png}" type="image/png">
+    <link rel="stylesheet" th:href="@{/resources/stylesheets/user/recover.css}">
+    <script defer th:src="@{/resources/scripts/user/recover.js}"></script>
 </head>
 <body>
-ㅎㅇ
+<header id="logo">
+    <a th:href="@{/}">
+        <img class="logo" th:src="@{/resources/images/logo2.png}" alt="">
+    </a>
+</header>
+<div id="recoverDiv">
+    <div class="choice_container">
+        <label class="label phone-certification">
+            <input checked class="radio " name="option" type="radio">
+            <span>휴대폰 인증하기</span>
+        </label>
+        <label class="label email-certification">
+            <input class="radio " name="option" type="radio">
+            <span>이메일 인증하기</span>
+        </label>
+    </div>
+    <section id="phoneContainer" class="section step-1 phone visible">
+        <div class="title-container">
+            <h2 class="title">아이디 찾기</h2>
+            <span class="sub_title">[휴대폰 인증]</span>
+        </div>
+        <div class="recover_information">
+            <label class="label">
+                <input class="input" name="name" placeholder="이름을 입력해주세요." type="text">
+            </label>
+            <div class="warning-container">
+                <span class="warning name" rel="nameWarning"></span>
+            </div>
+            <label class="label">
+                <input class="input" name="contact" placeholder="'-' 없이 등록된 연락처를 입력해 주세요." type="text">
+                <input class="button" name="contactSend" value="인증번호 전송" type="button">
+            </label>
+            <div class="warning-container">
+                <span class="warning contact" rel="contactWarning"></span>
+            </div>
+            <label class="label">
+                <input class="input" name="contactAuthCode" placeholder="발송된 인증번호를 입력해 주세요." type="text">
+                <input class="button" name="contactVerify" value="인증번호 확인" type="button">
+            </label>
+            <input hidden name="contactSalt" type="hidden">
+            <div class="warning-container">
+                <span class="warning authentication" rel="authenticationWarning"></span>
+            </div>
+        </div>
+        <div class="button-container">
+            <input class="button" type="button" value="뒤로가기">
+            <input class="button" type="submit" value="다음">
+        </div>
+    </section>
+    <section id="emailContainer" class="section step-2 email">
+        <div class="title-container">
+            <h2 class="title">아이디 찾기</h2>
+            <span class="sub_title">[이메일 인증]</span>
+        </div>
+        <div class="recover_information">
+            <label class="label">
+                <input class="input" name="name" placeholder="이름을 입력해주세요." type="text">
+            </label>
+            <div class="warning-container">
+                <span class="warning name" rel="nameWarning"></span>
+            </div>
+            <label class="label">
+                <input class="input" name="email" placeholder="등록된 이메일을 입력해 주세요." type="text">
+                <input class="button" name="emailSend" value="인증번호 전송" type="button">
+            </label>
+            <div class="warning-container">
+                <span class="warning email" rel="emailWarning"></span>
+            </div>
+            <label class="label">
+                <input class="input" name="emailAuthCode" placeholder="발송된 인증번호를 입력해 주세요." type="text">
+                <input class="button" name="emailVerify" value="인증번호 확인" type="button">
+            </label>
+            <input hidden name="emailSalt" type="hidden">
+            <div class="warning-container">
+                <span class="warning authentication" rel="authenticationWarning"></span>
+            </div>
+        </div>
+        <div class="button-container">
+            <input class="button" type="button" value="뒤로가기">
+            <input class="button" type="submit" value="다음">
+        </div>
+    </section>
+</div>
 </body>
 </html>
