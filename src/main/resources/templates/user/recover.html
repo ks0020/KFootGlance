@@ -16,7 +16,7 @@
         <img class="logo" th:src="@{/resources/images/logo2.png}" alt="">
     </a>
 </header>
-<div id="recoverDiv">
+<div id="recoverDiv" class="visible" >
     <div class="choice_container">
         <label class="label phone-certification">
             <input checked class="radio " name="option" type="radio">
@@ -93,6 +93,23 @@
             <input class="button" type="submit" value="다음">
         </div>
     </section>
+</div>
+<div id="recoverComplete">
+    <div class="title-container">
+        <h2 class="title">아이디 찾기</h2>
+        <span class="sub_title">[완료]</span>
+    </div>
+    <div class="content-container">
+        <img th:src="@{/resources/images/image-logo.png}" alt="">
+        <h3 class="remember">
+            회원님의 아이디는 <span class="rememberId"></span> 입니다.
+        </h3>
+    </div>
+    <div class="button-container">
+        <a th:href="@{/}">
+            <span class="register-button">홈으로</span>
+        </a>
+    </div>
 </div>
 </body>
 </html>

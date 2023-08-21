@@ -17,6 +17,11 @@ body {
     justify-content: center;
 }
 
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
 #recoverDiv > .step-1.visible,
 #recoverDiv > .step-2.visible {
     display: block;
@@ -43,7 +48,8 @@ body {
 }
 /*endregion*/
 
-#recoverDiv {
+#recoverDiv,
+#recoverComplete{
     width: 40rem;
     height: 100%;
 
@@ -54,6 +60,16 @@ body {
     padding: 1rem;
     box-shadow: 0 0 0.25rem rgba(255, 0, 0, 0.5);
     border: 0.0125rem solid;
+}
+
+#recoverDiv.visible,
+#recoverComplete.visible {
+    display: block;
+}
+
+#recoverDiv,
+#recoverComplete {
+    display: none;
 }
 
 /*region choice*/
@@ -195,5 +211,68 @@ body {
 .section > .button-container > .button:hover {
     cursor: pointer;
     filter: brightness(95%);
+}
+/*endregion*/
+
+/*region recoverComplete*/
+#recoverComplete > .title-container {
+    margin-left: 1rem;
+
+    align-items: center;
+    display: flex;
+}
+
+#recoverComplete > .title-container > .title {
+    color: #515151;
+}
+
+#recoverComplete > .title-container > .sub_title {
+    color: #515151;
+    margin-left: 1rem;
+}
+
+#recoverComplete > .content-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#recoverComplete > .content-container > h3> .rememberId {
+    color: #42ab42;
+    font-size: 1.15rem;
+}
+
+#recoverComplete > .content-container > img {
+    width: 20rem;
+}
+
+#recoverComplete > .button-container {
+    justify-content: center;
+    display: flex;
+}
+
+#recoverComplete > .button-container > a {
+    height: 3rem;
+    width: 80%;
+    background-color: #e9e9ef;
+    border: none;
+    border-radius: 0.5rem;
+    color: #8583ab;
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-weight: 400;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#recoverComplete > .button-container > a:hover {
+    filter: brightness(95%);
+}
+
+#recoverComplete > .button-container > a:hover {
+    filter: brightness(90%);
 }
 /*endregion*/

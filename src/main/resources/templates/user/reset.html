@@ -7,8 +7,132 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>K Foot Glance</title>
     <link rel="icon" th:href="@{/resources/images/logo.png}" type="image/png">
+    <link rel="stylesheet" th:href="@{/resources/stylesheets/user/reset.css}">
+    <script defer th:src="@{/resources/scripts/user/reset.js}"></script>
 </head>
 <body>
-ㅎㅇ
+<header id="logo">
+    <a th:href="@{/}">
+        <img class="logo" th:src="@{/resources/images/logo2.png}" alt="">
+    </a>
+</header>
+<div id="resetDiv" class="visible">
+    <div class="choice_container">
+        <label class="label phone-certification">
+            <input checked class="radio " name="option" type="radio">
+            <span>휴대폰 인증하기</span>
+        </label>
+        <label class="label email-certification">
+            <input class="radio " name="option" type="radio">
+            <span>이메일 인증하기</span>
+        </label>
+    </div>
+    <section id="phoneContainer" class="section step-1 phone visible">
+        <div class="title-container">
+            <h2 class="title">비밀번호 재설정</h2>
+            <span class="sub_title">[휴대폰 인증]</span>
+        </div>
+        <div class="reset_information">
+            <label class="label">
+                <input class="input" name="name" placeholder="아이디를 입력해주세요." type="text">
+            </label>
+            <div class="warning-container">
+                <span class="warning userId" rel="userIdWarning"></span>
+            </div>
+            <label class="label">
+                <input class="input" name="contact" placeholder="'-' 없이 등록된 연락처를 입력해 주세요." type="text">
+                <input class="button" name="contactSend" value="인증번호 전송" type="button">
+            </label>
+            <div class="warning-container">
+                <span class="warning contact" rel="contactWarning"></span>
+            </div>
+            <label class="label">
+                <input class="input" name="contactAuthCode" placeholder="발송된 인증번호를 입력해 주세요." type="text">
+                <input class="button" name="contactVerify" value="인증번호 확인" type="button">
+            </label>
+            <input hidden name="contactSalt" type="hidden">
+            <div class="warning-container">
+                <span class="warning authentication" rel="authenticationWarning"></span>
+            </div>
+        </div>
+        <div class="button-container">
+            <input class="button" type="button" value="뒤로가기">
+            <input class="button" type="submit" value="다음">
+        </div>
+    </section>
+    <section id="emailContainer" class="section step-2 email">
+        <div class="title-container">
+            <h2 class="title">비밀번호 재설정</h2>
+            <span class="sub_title">[이메일 인증]</span>
+        </div>
+        <div class="reset_information">
+            <label class="label">
+                <input class="input" name="name" placeholder="아이디를 입력해주세요." type="text">
+            </label>
+            <div class="warning-container">
+                <span class="warning name" rel="nameWarning"></span>
+            </div>
+            <label class="label">
+                <input class="input" name="email" placeholder="등록된 이메일을 입력해 주세요." type="text">
+                <input class="button" name="emailSend" value="인증번호 전송" type="button">
+            </label>
+            <div class="warning-container">
+                <span class="warning email" rel="emailWarning"></span>
+            </div>
+            <label class="label">
+                <input class="input" name="emailAuthCode" placeholder="발송된 인증번호를 입력해 주세요." type="text">
+                <input class="button" name="emailVerify" value="인증번호 확인" type="button">
+            </label>
+            <input hidden name="emailSalt" type="hidden">
+            <div class="warning-container">
+                <span class="warning authentication" rel="authenticationWarning"></span>
+            </div>
+        </div>
+        <div class="button-container">
+            <input class="button" type="button" value="뒤로가기">
+            <input class="button" type="submit" value="다음">
+        </div>
+    </section>
+</div>
+<div id="resetComplete">
+    <div class="content_container">
+        <div class="title-container">
+            <h2 class="title">비밀번호 재설정</h2>
+            <span class="sub_title">[변경 비밀번호 입력]</span>
+        </div>
+        <div class="informationPassword">
+            <label>
+                <input type="password" name="resetPassword" class="resetPassword" placeholder="비밀번호를 입력해주세요.">
+            </label>
+            <label>
+                <input type="password" name="resetPasswordCheck" class="passwordCheck"
+                       placeholder="비밀번호를 다시 한 번 입력해 주세요.">
+            </label>
+            <div class="warning-container">
+                <span class="resetWarning" rel="resetWarning"></span>
+            </div>
+        </div>
+        <div class="button-container">
+            <input class="resetNextButton" type="submit" value="다음">
+        </div>
+    </div>
+    <div class="reset_complete">
+        <div class="title-container">
+            <h2 class="title">비밀번호 재설정</h2>
+            <span class="sub_title">[변경 완료]</span>
+        </div>
+        <div class="content_container">
+            <img th:src="@{/resources/images/image-logo.png}" alt="">
+            <h3>
+                비밀번호 재설정이 완료 되었습니다.<br>변경된 정보로 로그인 후 이용해주시기 바랍니다.
+            </h3>
+        </div>
+        <div class="button-container">
+            <a th:href="@{/}">
+                <span class="register-button">홈으로</span>
+            </a>
+        </div>
+    </div>
+</div>
 </body>
 </html>

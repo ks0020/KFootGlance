@@ -1,0 +1,396 @@
+@charset "UTF-8";
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css");
+
+html {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    background-color: #F6F1F1;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*region visible*/
+#resetDiv.visible,
+#resultPage.visible {
+    display: block;
+}
+
+#resetDiv,
+#resultPage {
+    display: none;
+}
+
+#resetDiv > .step-1.visible,
+#resetDiv > .step-2.visible {
+    display: block;
+}
+
+#resetDiv > .step-1,
+#resetDiv > .step-2 {
+    display: none;
+}
+
+#resultPage > .password_result {
+    display: none;
+}
+
+#resultPage > .password_result.visible {
+    display: block;
+}
+/*endregion*/
+
+/*region logo*/
+#logo {
+    box-sizing: border-box
+}
+
+#logo > a {
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+#logo > a > .logo{
+    display: block;
+    width: 15rem;
+    margin: 1.5rem 0;
+}
+/*endregion*/
+
+#resetDiv,
+#resetComplete{
+    width: 40rem;
+    height: 100%;
+
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    padding: 1rem;
+    box-shadow: 0 0 0.25rem rgba(255, 0, 0, 0.5);
+    border: 0.0125rem solid;
+}
+
+#resetDiv.visible,
+#resetComplete.visible{
+    display: block;
+}
+
+#resetDiv,
+#resetComplete{
+    display: none;
+}
+
+/*region choice*/
+
+.choice_container {
+    margin: 1rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 0.25rem rgba(255, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.choice_container > label {
+    width: 100%;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    padding: 1rem;
+    text-align: center;
+}
+
+.choice_container > label:first-child {
+    border-radius: 0.25rem 0 0 0.25rem;
+    border-right: 0.0125rem solid rgba(255, 0, 0, 0.5);
+}
+
+.choice_container > label:last-child {
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.choice_container > label:hover{
+    filter: brightness(95%);
+}
+
+.choice_container > label:active{
+    filter: brightness(90%);
+}
+
+.choice_container > label > input{
+    display: none;
+}
+
+.choice_container > .label:has(> input[type="radio"]:checked) {
+    filter: brightness(90%);
+}
+
+/*endregion*/
+
+/*region section*/
+.section > .title-container {
+    margin-left: 1rem;
+    border-bottom: 0.0125rem solid;
+    border-top: 0.0125rem solid;
+
+    align-items: center;
+    display: flex;
+}
+
+.section > .title-container > .title {
+    color: #515151;
+}
+
+.section > .title-container > .sub_title {
+    color: #515151;
+    margin-left: 1rem;
+}
+
+.section >.reset_information {
+    width: 100%;
+    padding: 1rem 0;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.section > .reset_information > .label {
+    width: 90%;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    border: 0.0125rem solid;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.section > .reset_information > .label > .input {
+    width: 100%;
+    height: 2.5rem;
+
+    box-sizing: border-box;
+    border: none;
+    font-size: 1rem;
+    padding: 0.625rem 0.875rem;
+    outline: none;
+}
+
+.section > .reset_information > .label > .button {
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    padding: 0.625rem 0.875rem;
+    margin-left: 1rem;
+}
+
+.section > .reset_information > .warning-container {
+    height: 1.5rem;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.section > .reset_information > .warning-container > .warning{
+    color: #ef5350;
+    font-size: 0.9rem;
+}
+
+.section > .button-container {
+    justify-content: space-evenly;
+    display: flex;
+}
+
+.section > .button-container > .button {
+    width: 100%;
+    height: 3rem;
+    margin: 0 1rem;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #8583ab;
+    background-color: #e9e9ef;
+    border: none;
+    box-shadow: 0 0 0.25rem rgba(255, 0, 0, 0.5);
+    border-radius: 0.5rem;
+}
+
+.section > .button-container > .button:hover {
+    cursor: pointer;
+    filter: brightness(95%);
+}
+/*endregion*/
+
+/*region resetComplete - information*/
+
+#resetComplete > .content_container.visible,
+#resetComplete > .reset_complete.visible{
+    display: block;
+}
+
+#resetComplete > .content_container,
+#resetComplete > .reset_complete{
+    display: none;
+}
+
+#resetComplete > .content_container > .title-container {
+    margin-left: 1rem;
+
+    align-items: center;
+    display: flex;
+}
+
+#resetComplete > .content_container > .title-container > .title {
+    color: #515151;
+}
+
+#resetComplete > .content_container > .title-container > .sub_title {
+    color: #515151;
+    margin-left: 1rem;
+}
+
+#resetComplete > .content_container > .informationPassword {
+    width: 100%;
+    padding: 1rem 0;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#resetComplete > .content_container > .informationPassword > label {
+    width: 90%;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    border: 0.0125rem solid;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#resetComplete > .content_container > .informationPassword > label:first-child {
+    margin-bottom: 1.5rem;
+}
+
+#resetComplete > .content_container > .informationPassword > label > input {
+    width: inherit;
+    height: 3rem;
+    outline: none;
+    border: none;
+}
+
+#resetComplete > .content_container > .button-container{
+    width: 100%;
+
+    justify-content: center;
+    display: flex;
+}
+
+#resetComplete > .content_container > .informationPassword > .warning-container {
+    height: 1.5rem;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#resetComplete > .content_container > .informationPassword > .warning-container > .warning{
+    color: #ef5350;
+    font-size: 0.9rem;
+}
+
+#resetComplete > .content_container > .button-container > .resetNextButton {
+    width: 100%;
+    height: 3rem;
+    margin: 0 1rem;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #8583ab;
+    background-color: #e9e9ef;
+    border: none;
+    box-shadow: 0 0 0.25rem rgba(255, 0, 0, 0.5);
+    border-radius: 0.5rem;
+}
+
+#resetComplete > .content_container > .button-container > .resetNextButton:hover {
+    filter: brightness(95%);
+}
+
+#resetComplete > .content_container > .button-container > .resetNextButton:active {
+    filter: brightness(90%);
+}
+
+/*endregion*/
+
+/*region resetComplete - complete*/
+
+#resetComplete > .reset_complete > .title-container {
+    margin-left: 1rem;
+
+    align-items: center;
+    display: flex;
+}
+
+#resetComplete > .reset_complete > .title-container > .title {
+    color: #515151;
+}
+
+#resetComplete > .reset_complete > .title-container > .sub_title {
+    color: #515151;
+    margin-left: 1rem;
+}
+
+#resetComplete > .reset_complete > .content_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#resetComplete > .reset_complete > .content_container > img {
+    width: 20rem;
+}
+
+#resetComplete > .reset_complete > .button-container {
+    justify-content: center;
+    display: flex;
+}
+
+#resetComplete > .reset_complete > .button-container > a {
+    height: 3rem;
+    width: 80%;
+    background-color: #e9e9ef;
+    border: none;
+    border-radius: 0.5rem;
+    color: #8583ab;
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-weight: 400;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#resetComplete > .reset_complete > .button-container > a:hover {
+    filter: brightness(95%);
+}
+#resetComplete > .reset_complete > .button-container > a:active {
+    filter: brightness(90%);
+}
+
+/*endregion*/
