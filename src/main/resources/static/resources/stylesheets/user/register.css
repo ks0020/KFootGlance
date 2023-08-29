@@ -50,6 +50,24 @@ body::-webkit-scrollbar {
     width: 0.5em;
 }
 
+
+.warning-container {
+    height: 1.5rem;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.warning-container > .warning{
+    color: #ef5350;
+    font-size: 0.9rem;
+}
+
+.warning.visible {
+    max-height: 3rem;
+}
+
 /*region agreeBtn*/
 .agreeLabel {
     display: flex;
@@ -244,18 +262,6 @@ body::-webkit-scrollbar {
     filter: none;
 }
 
-.step-2 > .user_information > .warning-container {
-    height: 1.5rem;
-    width: 100%;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-
-.step-2 > .user_information > .warning-container > .warning{
-    color: #ef5350;
-    font-size: 0.9rem;
-}
 /*endregion*/
 
 /*region step-3*/
@@ -279,6 +285,4 @@ body::-webkit-scrollbar {
     display: flex;
     justify-content: center;
 }
-
-
 /*endregion*/

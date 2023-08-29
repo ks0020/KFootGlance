@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping(value = "/user")
 public class UserController {
 
+//    login, recover, reset, register modelAndView
     @RequestMapping(value = "/login",
             method = RequestMethod.GET,
             produces = MediaType.TEXT_HTML_VALUE)
@@ -41,5 +42,8 @@ public class UserController {
         ModelAndView modelAndView = new ModelAndView("user/register");
         return modelAndView;
     }
+//    요까이
+
+
 
 }
