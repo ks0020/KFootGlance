@@ -75,7 +75,7 @@ registerDiv.termWarning.show = (text) => {
 };
 registerDiv.termWarning.hide = () => {
     registerDiv.termWarning.classList.remove('visible');
-}
+};
 
 registerDiv.show = () => {
     registerDiv['agreeServiceTerm'].checked = false;
@@ -86,10 +86,10 @@ registerDiv.show = () => {
     registerDiv.classList.add('step-1', 'visible');
 };
 
-
 registerDiv.onsubmit = e => {
     e.preventDefault();
     registerDiv.termWarning.hide();
+
     if (registerDiv.querySelector('.step-1').classList.contains('visible')) {
         if (!registerDiv['agreeServiceTerm'].checked) {
             registerDiv.termWarning.show('서비스 이용약관을 읽고 동의해 주세요.');
