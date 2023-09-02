@@ -141,7 +141,7 @@
         </div>
         <div class="button-container">
             <input class="button" name="back" type="button" value="뒤로가기">
-            <input class="button next_button" type="submit" value="다음">
+            <input class="button" type="submit" value="다음">
         </div>
     </section >
     <section class="section step-2">
@@ -168,33 +168,33 @@
             </div>
             
             <label class="label">
-                <input type="email" placeholder="계정 복구용 이메일을 입력해주세요." class="input">
+                <input type="email" name="email" placeholder="계정 복구용 이메일을 입력해주세요." class="input">
             </label>
             <div class="warning-container">
                 <span class="warning email" rel="emailWarning"></span>
             </div>
             <label class="label">
-                <input type="text" placeholder="이름을 입력해 주세요." class="input">
+                <input type="text" name="name" placeholder="이름을 입력해 주세요." class="input">
             </label>
             <div class="warning-container">
                 <span class="warning name" rel="nameWarning"></span>
             </div>
             <label class="label">
-                <input type="text" placeholder="닉네임을 입력해주세요." class="input">
+                <input type="text" name="nickname" placeholder="닉네임을 입력해주세요." class="input">
                 <input class="button" name="nicknameCheck" value="중복확인" type="button">
             </label>
             <div class="warning-container">
                 <span class="warning nickname" rel="nicknameWarning"></span>
             </div>
             <label class="label">
-                <input type="text" placeholder="휴대폰 번호를 입력해주세요." class="input">
+                <input type="text" name="contact" placeholder="휴대폰 번호를 입력해주세요." class="input">
                 <input class="button" name="contactSend" value="인증번호 전송" type="button">
             </label>
             <div class="warning-container">
                 <span class="warning contact" rel="contactWarning"></span>
             </div>
             <label class="label">
-                <input type="text" placeholder="인증번호를 입력해주세요." class="input">
+                <input type="text" name="contactCode" placeholder="인증번호를 입력해주세요." class="input">
                 <input class="button" name="contactVerify" value="인증번호 확인" type="button">
             </label>
             <input hidden name="contactSalt" type="hidden">
@@ -204,7 +204,7 @@
         </div>
         <div class="button-container">
             <input class="button" type="button" value="뒤로가기">
-            <input class="button next_button" type="submit" value="다음">
+            <input class="button" type="submit" value="다음">
         </div>
     </section>
     <section class="section step-3">
