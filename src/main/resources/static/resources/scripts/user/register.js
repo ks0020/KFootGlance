@@ -76,7 +76,7 @@ registerDiv.termWarning.show = (text) => {
     registerDiv.termWarning.classList.add('visible');
 };
 registerDiv.termWarning.hide = () => {
-    registerDiv.termWarning.classList.remove('visible');-
+    registerDiv.termWarning.classList.remove('visible');
 };
 
 registerDiv.show = () => {
@@ -108,4 +108,3 @@ registerDiv.querySelector('[type="submit"]').addEventListener('click', (e) => {
     }
 
 });
-}
