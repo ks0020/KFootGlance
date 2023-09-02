@@ -17,9 +17,9 @@ import java.util.Date;
 public class NCloudUtil {
 
     private static final String URL_PREFIX = "https://sens.apigw.ntruss.com";
-    private static final String ACCESS_KEY = "V9rl5TavPMinq2iHG4nz";
-    private static final String SECRET_KEY = "HkcnExr3VxG3PZrc3MeUjQo2B3CV9bYtKIXSMzNe";
-    private static final String SERVICE_ID = "ncp:sms:kr:307473730174:portfolio";
+    private static final String ACCESS_KEY = "MLgmpjIoZnhMEGmFHXlb";
+    private static final String SECRET_KEY = "Pwe6PXRaNWe2PAsnEZJ07Swgn1ldx2qrPqKcjtY9";
+    private static final String SERVICE_ID = "ncp:sms:kr:307473845566:portfolio";
 
     private static String generateSignature(String requestMethod, String requestUrl, long timestamp) {
         requestUrl = requestUrl.replace(NCloudUtil.URL_PREFIX, "");
@@ -45,7 +45,7 @@ public class NCloudUtil {
         final JSONObject requestBody = new JSONObject() {{
             put("type", "SMS");
             put("contentType", "COMM");
-            put("from", "01075097068");
+            put("from", "01057425206");
             put("content", content);
             put("messages", new JSONArray(){{
                 put(new JSONObject(){{
