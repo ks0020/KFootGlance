@@ -68,13 +68,15 @@ checkboxes.forEach(function (checkbox) {
 
 
 registerDiv.termWarning = registerDiv.querySelector('.term-warning');
+registerDiv.warningContainer = registerDiv.querySelectorAll('.warning-container');
+
 
 registerDiv.termWarning.show = (text) => {
     registerDiv.termWarning.innerText = text;
     registerDiv.termWarning.classList.add('visible');
 };
 registerDiv.termWarning.hide = () => {
-    registerDiv.termWarning.classList.remove('visible');
+    registerDiv.termWarning.classList.remove('visible');-
 };
 
 registerDiv.show = () => {
@@ -86,20 +88,24 @@ registerDiv.show = () => {
     registerDiv.classList.add('step-1', 'visible');
 };
 
-registerDiv.onsubmit = e => {
+registerDiv.querySelector('[type="submit"]').addEventListener('click', (e) => {
     e.preventDefault();
     registerDiv.termWarning.hide();
 
     if (registerDiv.querySelector('.step-1').classList.contains('visible')) {
-        if (!registerDiv['agreeServiceTerm'].checked) {
+        console.log('야');
+        if (!registerDiv.querySelector('[name="agreeServiceTerm"]').checked) {
+            console.log('뭐');
             registerDiv.termWarning.show('서비스 이용약관을 읽고 동의해 주세요.');
-            return;
+            return false;
         }
-        if (!registerDiv['agreePrivacyTerm'].checked) {
+        if (!registerDiv.querySelector('[name="agreePrivacyTerm"]').checked) {
             registerDiv.termWarning.show('개인정보 처리방침을 읽고 동의해 주세요.');
-            return;
+            return false    ;
         }
         registerDiv.querySelector('.step-1').classList.remove('visible');
         registerDiv.querySelector('.step-2').classList.add('visible');
     }
+
+});
 }
