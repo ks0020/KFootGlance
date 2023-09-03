@@ -3,7 +3,6 @@ package com.devkkang.kfootglance.controllers;
 import com.devkkang.kfootglance.entities.UserEntity;
 import com.devkkang.kfootglance.entities.UserRegisterContactCodeEntity;
 import com.devkkang.kfootglance.enums.UserRegisterResult;
-import com.devkkang.kfootglance.services.UserService;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -19,11 +18,11 @@ import javax.mail.MessagingException;
 @RequestMapping(value = "/user")
 public class UserController {
 
-    private final UserService userService;
-    @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
+//    private final UserService userService;
+//    @Autowired
+//    public UserController(UserService userService) {
+//        this.userService = userService;
+//    }
 
 //    login, recover, reset, register modelAndView
     @RequestMapping(value = "/login",

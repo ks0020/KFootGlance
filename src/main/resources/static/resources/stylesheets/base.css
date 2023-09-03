@@ -67,11 +67,6 @@ body {
     max-width: 1500px;
     margin: 0 auto;
     overflow: scroll;
-
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
 }
 
 body::-webkit-scrollbar {

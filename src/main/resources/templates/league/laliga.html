@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>>K Foot Glance</title>
+    <link rel="icon" th:href="@{/resources/images/logo.png}" type="image/png">
+    <link rel="stylesheet" th:href="@{/resources/stylesheets/base.css}">
+    <link rel="stylesheet" th:href="@{/resources/stylesheets/league/leauge_base.css}">
+</head>
+<body>
+<header id="headLine">
+    <div class="logo" th:if="${session.user == null}">
+        <a th:href="@{/}">
+            <img th:src="@{/resources/images/logo2.png}" alt="">
+        </a>
+    </div>
+    <div class="logo" th:if="${session.user != null}">
+        <a th:if="${session.user.getAuthority() != 2}" th:href="@{/static}">
+            <img th:src="@{/resources/images/logo2.png}" alt="">
+        </a>
+        <a th:if="${session.user.getAuthority() == 2}" th:href="@{/entrepreneur}">
+            <img th:src="@{/resources/images/logo2.png}" alt="">
+        </a>
+    </div>
+    <div class="info_menu" >
+        <a class="nickname" th:if="${session.user != null}" th:href="@{/mypage/modify}">
+            <span th:text="${session.user['nickname']}"></span>
+        </a>
+        <span th:if="${session.user != null}">님</span>
+        <a th:if="${session.user == null}" th:href="@{/user/login}">
+            <img th:src="@{/resources/images/user.png}" alt="">
+        </a>
+        <a th:if="${session.user != null}" class="logout" href="#">로그아웃</a>
+        <a th:if="${session.user != null}" th:href="@{/mypage/modify}">마이페이지</a>
+        <a th:href="@{/help/faq}">
+            <img th:src="@{/resources/images/inquiry.png}" alt="">
+        </a>
+    </div>
+</header>
+<div id="searchBox">
+    <div class="search">
+        <label>
+            <div>
+                <img width="24" height="24" src="https://img.icons8.com/material-outlined/24/ff0000/search--v1.png" alt="search--v1"/>
+            </div>
+            <input id="searchContent" type="text" placeholder="검색">
+        </label>
+    </div>
+</div>
+<div id="menuContainer">
+    <ul>
+        <li class="icon">
+            <a th:href="@{/league/EPL}">
+                <img th:src="@{/resources/images/프리미어리그.png}" alt="">
+                <span>프리미어 리그</span>
+            </a>
+        </li>
+        <li class="icon">
+            <a th:href="@{/league/laliga}">
+                <img th:src="@{/resources/images/라리가.png}" alt="">
+                <span>프리메라리가</span>
+            </a>
+        </li>
+        <li class="icon">
+            <a th:href="@{/league/bundesliga}">
+                <img th:src="@{/resources/images/분데스.png}" alt="">
+                <span>분데스리가</span>
+            </a>
+        </li>
+        <li class="icon">
+            <a th:href="@{/league/serie}">
+                <img th:src="@{/resources/images/세리아.png}" alt="">
+                <span>세리에 A</span>
+            </a>
+        </li>
+        <li class="icon">
+            <a th:href="@{/league/ligue1}">
+                <img th:src="@{/resources/images/리그앙.png}" alt="">
+                <span>리그앙</span>
+            </a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

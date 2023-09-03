@@ -3,24 +3,25 @@ package com.devkkang.kfootglance.services;
 import com.devkkang.kfootglance.entities.UserEntity;
 import com.devkkang.kfootglance.entities.UserRegisterContactCodeEntity;
 import com.devkkang.kfootglance.enums.UserRegisterResult;
-import com.devkkang.kfootglance.mappers.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
-@Service
-public class UserService {
-    private final UserMapper userMapper;
-    private final JavaMailSender javaMailSender;
-    private final SpringTemplateEngine springTemplateEngine;
+import javax.mail.MessagingException;
 
-    @Autowired
-    public UserService(UserMapper userMapper, JavaMailSender javaMailSender, SpringTemplateEngine springTemplateEngine) {
-        this.userMapper = userMapper;
-        this.javaMailSender = javaMailSender;
-        this.springTemplateEngine = springTemplateEngine;
-    }
+//@Service
+//public class UserService {
+//    private final UserMapper userMapper;
+//    private final JavaMailSender javaMailSender;
+//    private final SpringTemplateEngine springTemplateEngine;
+
+//    @Autowired
+//    public UserService(UserMapper userMapper, JavaMailSender javaMailSender, SpringTemplateEngine springTemplateEngine) {
+//        this.userMapper = userMapper;
+//        this.javaMailSender = javaMailSender;
+//        this.springTemplateEngine = springTemplateEngine;
+//    }
 
 //    public UserRegisterResult register(UserEntity user,
 //                                       UserRegisterContactCodeEntity registerContactCode) throws MessagingException {
@@ -63,4 +64,4 @@ public class UserService {
 //                : UserRegisterResult.FAILURE;
 //    }
 
-}
+//}
