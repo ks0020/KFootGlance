@@ -341,7 +341,6 @@ registerDiv.querySelector('[name="idCheck"]').addEventListener('click', () => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status >= 200 && xhr.status < 300) {
                 const responseObject = JSON.parse(xhr.responseText);
-                console.log(responseObject.result);
                 switch (responseObject.result) {
                     case 'duplicate':
                         registerDiv.idWarning.show('해당 아이디는 이미 사용 중입니다.');
@@ -375,3 +374,118 @@ registerDiv.querySelector('[name="userId"]').oninput = () =>{
         registerDiv.idWarning.hide();
     }
 };
+
+registerDiv.querySelector('[name="password"]', '[name="passwordCheck]').forEach(name => {
+    registerDiv[name].addEventListener('focusout', () => {
+        if (registerDiv['password'].value === '') {
+            registerDiv.passwordWarning.show('비밀번호를 입력해 주세요.');
+            registerDiv.passwordWarning.style.color = 'red';
+            return;
+        }
+        if (!new RegExp('^([\\da-zA-Z`~!@#$%^&*()\\-_=+\\[{\\]};:\'",<.>/?]{8,50})$').test(registerDiv['password'].value)) {
+            registerDiv.passwordWarning.show('올바른 비밀번호를 입력해 주세요.');
+            registerDiv['password'].focus();
+            registerDiv['password'].select();
+            return;
+        }
+        if (registerDiv['passwordCheck'].value === '') {
+            registerDiv.passwordWarning.show('비밀번호를 다시 한번 더 입력해 주세요.');
+            registerDiv.passwordWarning.style.color = 'red';
+            return;
+        }
+        if (registerDiv['password'].value !== registerDiv['passwordCheck'].value) {
+            registerDiv.passwordWarning.show('비밀번호가 서로 일치하지 않습니다.');
+            registerDiv.passwordWarning.style.color = 'red';
+            return;
+        }
+        if (registerDiv['password'].value === registerDiv['passwordCheck'].value) {
+            registerDiv.passwordWarning.show('비밀번호가 일치합니다.');
+            registerDiv.passwordWarning.style.color = 'forestgreen';
+        } else {
+            registerDiv.passwordWarning.hide();
+        }
+    });
+});
+
+// 이메일 변경시마다 확인
+['email'].forEach(email => {
+    registerDiv[email].addEventListener('focusout', () => {
+        if (registerDiv['email'].value === '') {
+            registerDiv.emailWarning.show('이메일을 입력해 주세요.');
+            registerDiv.emailWarning.style.color = 'red';
+        } else if (!new RegExp('^(?=.{10,50}$)([\\da-zA-Z\\-_]{5,25})@([\\da-z][\\da-z\\-]*[\\da-z]\\.)?([\\da-z][\\da-z\\-]*[\\da-z])\\.([a-z]{2,15})(\\.[a-z]{2})?$').test(registerDiv['email'].value)) {
+            registerDiv.emailWarning.show('올바른 이메일을 입력해 주세요.');
+            registerDiv['email'].focus();
+            registerDiv['email'].select();
+        } else {
+            registerDiv.emailWarning.hide();
+        }
+    });
+});
+
+// 이메일 변경시마다 확인
+['name'].forEach(name => {
+    registerDiv[name].addEventListener('focusout', () => {
+        if (registerDiv['name'].value === '') {
+            registerDiv.nameWarning.show('이름을 입력해 주세요.');
+            registerDiv.nameWarning.style.color = 'red';
+        } else {
+            registerDiv.nameWarning.hide();
+        }
+    });
+});
+
+// 닉네임 확인
+registerDiv['nicknameCheck'].addEventListener('click', () => {
+    if (registerDiv['nickname'].value === '') {
+        registerDiv.nicknameWarning.show('닉네임을 입력해 주세요.');
+        registerDiv['nickname'].focus();
+        return;
+    }
+    if (!new RegExp('^([가-힣a-zA-Z0-9_-]{2,20})$').test(registerDiv['nickname'].value)) {
+        registerDiv.nicknameWarning.show('별명은 2~20자의 한글, 영문, 숫자, 특수문자(-, _)만 사용할 수 있습니다.');
+        registerDiv['nickname'].focus();
+        registerDiv['nickname'].select();
+        return;
+    }
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', `/user/userNicknameCount?nickname=${registerDiv['nickname'].value}`);
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                const responseObject = JSON.parse(xhr.responseText);
+                console.log(responseObject);
+                switch (responseObject.result) {
+                    case 'duplicate':
+                        registerDiv.nicknameWarning.show('해당 닉네임은 이미 사용 중입니다.');
+                        break;
+                    case 'okay':
+                        registerDiv.nicknameWarning.show('해당 닉네임은 사용할 수 있습니다.');
+                        registerDiv.nicknameWarning.style.color = 'forestgreen';
+                        break;
+                    default:
+                        registerDiv.nicknameWarning.show('서버가 알 수 없는 응답을 반환하였습니다. 잠시 후 다시 시도해 주세요.');
+                }
+            } else {
+                registerDiv.nicknameWarning.show('서버와 통신하지 못하였습니다. 잠시 후 다시 시도해 주세요.');
+            }
+        }
+    };
+    xhr.send();
+});
+
+// 닉네임 변경시마다 확인
+['nickname'].forEach(nickname => {
+    registerDiv[nickname].addEventListener('focusout', () => {
+        if (registerDiv['nickname'].value === '') {
+            registerDiv.nicknameWarning.show('별명을 입력해 주세요.');
+            registerDiv.nicknameWarning.style.color = 'red';
+        } else if (!new RegExp('^([가-힣a-zA-Z0-9_-]{2,20})$').test(registerDiv['nickname'].value)) {
+            registerDiv.nicknameWarning.show('별명은 2~20자의 한글, 영문, 숫자, 특수문자(-, _)만 사용할 수 있습니다.');
+            registerDiv['nickname'].focus();
+            registerDiv['nickname'].select();
+        } else {
+            registerDiv.nicknameWarning.hide();
+        }
+    });
+});
