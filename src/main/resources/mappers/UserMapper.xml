@@ -4,5 +4,121 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.devkkang.kfootglance.mappers.UserMapper">
 
+    <insert id="insertUser"
+            parameterType="com.devkkang.kfootglance.entities.UserEntity">
+        INSERT INTO `kfootglance`.`user` (`user_id`, `contact`, `email`, `password`, `name`, `nickname`, `status`,
+        `authority`, `created_at`)
+        VALUES (#{userId},
+        #{contact},
+        #{email},
+        #{password},
+        #{name},
+        #{nickname},
+        #{status},
+        #{authority},
+        IF NULL(#{createdAt}, DEFAULT(`created_at`)))
+    </insert>
+
+    <select id="selectUserById"
+            resultType="com.devkkang.kfootglance.entities.UserEntity">
+        SELECT `index` AS `index`,
+        `user_id` AS `userId`,
+        `contact` AS `contact`,
+        `email` AS `email`,
+        `password` AS `password`,
+        `name` AS `name`,
+        `nickname` AS `nickname`,
+        `status` AS `status`,
+        `authority` AS `authority`,
+        `created_at` AS `createdAt`
+        FROM `kfootglance`.`user`
+        WHERE `user_id` = #{userId}
+        LIMIT 1
+    </select>
+
+    <select id="selectUserByEmail"
+            resultType="com.devkkang.kfootglance.entities.UserEntity">
+        SELECT `index` AS `index`,
+        `user_id` AS `user_id`,
+        `contact` AS `contact`,
+        `email` AS `email`,
+        `password` AS `password`,
+        `name` AS `name`,
+        `nickname` AS `nickname`,
+        `status` AS `status`,
+        `authority` AS `authority`,
+        `created_at` AS `createdAt`
+        FROM `kfootglance`.`user`
+        WHERE `email` = #{email}
+        LIMIT 1
+    </select>
+
+    <select id="selectUserByContact"
+            resultType="com.devkkang.kfootglance.entities.UserEntity">
+        SELECT `index`      AS `index`,
+        `user_id`         AS `user_id`,
+        `contact`    AS `contact`,
+        `email`      AS `email`,
+        `password`   AS `password`,
+        `name`       AS `name`,
+        `nickname`   AS `nickname`,
+        `status`     AS `status`,
+        `authority`  AS `authority`,
+        `created_at` AS `createdAt`
+        FROM `kfootglance`.`user`
+        WHERE `contact` = #{contact}
+        LIMIT 1
+    </select>
+
+    <select id="selectUserByNickname"
+            resultType="com.devkkang.kfootglance.entities.UserEntity">
+        SELECT `index`      AS `index`,
+        `user_id`         AS `user_id`,
+        `contact`    AS `contact`,
+        `email`      AS `email`,
+        `password`   AS `password`,
+        `name`       AS `name`,
+        `nickname`   AS `nickname`,
+        `status`     AS `status`,
+        `authority`  AS `authority`,
+        `created_at` AS `createdAt`
+        FROM `kfootglance`.`user`
+        WHERE `nickname` = #{nickname}
+        LIMIT 1
+    </select>
+
+    <select id="selectUserByName"
+            resultType="com.devkkang.kfootglance.entities.UserEntity">
+        SELECT `index`      AS `index`,
+        `user_id`         AS `user_id`,
+        `contact`    AS `contact`,
+        `email`      AS `email`,
+        `password`   AS `password`,
+        `name`       AS `name`,
+        `nickname`   AS `nickname`,
+        `status`     AS `status`,
+        `authority`  AS `authority`,
+        `created_at` AS `createdAt`
+        FROM `kfootglance`.`user`
+        WHERE `name` = #{name}
+        LIMIT 1
+    </select>
+
+    <select id="selectRegisterContactCodeByContactCodeSalt"
+            parameterType="com.devkkang.kfootglance.entities.UserRegisterContactCodeEntity"
+            resultType="com.devkkang.kfootglance.entities.UserRegisterContactCodeEntity">
+        SELECT `index`        AS `index`,
+        `contact`      AS `contact`,
+        `code`         AS `code`,
+        `salt`         AS `salt`,
+        `created_at`   AS `createdAt`,
+        `expires_at`   AS `expiresAt`,
+        `expired_flag` AS `isExpired`
+        FROM `kfootglance`.`phone_authentication`
+        WHERE BINARY `contact` = #{contact}
+        AND BINARY `code` = #{code}
+        AND BINARY `salt` = #{salt}
+        LIMIT 1
+    </select>
 
 </mapper>

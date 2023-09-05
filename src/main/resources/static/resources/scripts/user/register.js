@@ -321,3 +321,57 @@ submitButtons.forEach(button => {
         }
     });
 });
+
+// 아이디 중복확인
+registerDiv.querySelector('[name="idCheck"]').addEventListener('click', () => {
+    registerDiv.idWarning.hide();
+    if (registerDiv.querySelector('[name="userId"]').value === '') {
+        registerDiv.idWarning.show('아이디를 입력해 주세요.');
+        registerDiv.querySelector('[name="userId"]').focus();
+        return;
+    }
+    if(!new RegExp('^([\\da-zA-Z]{4,16})$').test(registerDiv.querySelector('[name="userId"]').value)){
+        registerDiv.idWarning.style.color = '#ef5350';
+        registerDiv.idWarning.show('올바른 아이디를 입력해 주세요.');
+        return;
+    }
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', `/user/userIdCount?userId=${registerDiv.querySelector('[name="userId"]').value}`);
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                const responseObject = JSON.parse(xhr.responseText);
+                console.log(responseObject.result);
+                switch (responseObject.result) {
+                    case 'duplicate':
+                        registerDiv.idWarning.show('해당 아이디는 이미 사용 중입니다.');
+                        break;
+                    case 'okay':
+                        registerDiv.idWarning.show('해당 아이디는 사용할 수 있습니다.');
+                        registerDiv.idWarning.style.color = 'forestgreen';
+                        break;
+                    default:
+                        registerDiv.idWarning.show('서버가 알 수 없는 응답을 반환하였습니다. 잠시 후 다시 시도해 주세요.');
+                }
+            } else {
+                registerDiv.idWarning.show('서버와 통신하지 못하였습니다. 잠시 후 다시 시도해 주세요.');
+            }
+        }
+    };
+    xhr.send();
+});
+
+// 아이디 변경시마다 정규식 확인
+registerDiv.querySelector('[name="userId"]').oninput = () =>{
+    if(registerDiv.querySelector('[name="userId"]').value === ''){
+        registerDiv.idWarning.style.color = '#ef5350';
+        registerDiv.idWarning.show('아이디를 입력해 주세요.');
+    }
+    else if(!new RegExp('^([\\da-zA-Z]{4,16})$').test(registerDiv.querySelector('[name="userId"]').value)){
+        registerDiv.idWarning.style.color = '#ef5350';
+        registerDiv.idWarning.show('올바른 아이디를 입력해 주세요.');
+    }
+    else {
+        registerDiv.idWarning.hide();
+    }
+};

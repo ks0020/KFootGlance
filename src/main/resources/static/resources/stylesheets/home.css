@@ -1,8 +1,36 @@
 @charset "UTF-8";
 
+._object-btn {
+    width: 12rem;
+    height: 4rem;
+    background-color: #e9e9ef;
+    border: none;
+    box-shadow: 0 0 0.25rem rgba(255, 0, 0, 0.5);
+    border-radius: 0.25rem;
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin-top: 1.25rem;
+
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+._object-btn > span {
+    color: #8583ab;
+}
+
+._object-btn > img {
+    width: 2.5rem;
+}
+
 #center {
     width: 100%;
     border-top: 0.0625rem solid red;
+    max-height: 20rem;
+    min-height: 10rem;
+    height: 100%;
 
     align-items: flex-start;
     display: flex;
@@ -19,7 +47,7 @@
     padding: 0 2rem 0 0;
 }
 
-
+/*region ranking*/
 #center > .ranking > div > .league_list {
     position: relative;
     width: 100%;
@@ -45,6 +73,7 @@
     text-decoration: underline;
     color: #000000;
 }
+/*endregion*/
 
 #center > div > div {
     width: 100%;
@@ -109,54 +138,42 @@
     padding-top: 1.5rem;
 }
 
-#center > .login_div > .login_user {
+#center > .login_div > .login_user,
+#center > .login_div > .not_login{
     padding: 0;
     border-top: 0.0625rem solid #c6c6c6;
-
+    height: 100%;
 
     display: flex;
     flex-direction: row;
 }
 
-#center > .login_div > .login_user > .login_btn {
+/*region login_user*/
+#center > .login_div > .not_login > .login_btn,
+#center > .login_div > .not_login > .register_recover {
+    padding: 1rem 0;
     width: 100%;
+    height: 100%;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#center > .login_div > .not_login > .login_btn {
+    width: 100%;
+    height: 100%;
+
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
-#center > .login_div > .login_user > .login_btn > a {
-    width: 75%;
-    background-color: #e9e9ef;
-    color: #8583ab;
-    font-size: 1.5rem;
-    font-weight: 600;
-    padding: 1rem 0;
-    margin: 0.5rem;
-
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-
-#center > .login_div > .login_user > .login_btn > a > img {
-    width: 3rem;
-    padding-left: 0.75rem;
-}
-
-#center > .login_div > .login_user > .login_btn > img {
+#center > .login_div > .not_login > .login_btn > img {
     width: 7.5rem;
 }
 
-#center > .login_div > .login_user > .register_recover {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#center > .login_div > .login_user > .register_recover > a {
+#center > .login_div > .not_login > .register_recover > a {
     background-color: #e9e9ef;
     width: 75%;
     padding: 1rem 0;
@@ -165,17 +182,85 @@
     display: flex;
     justify-content: space-around;
 }
-
-#center > .login_div > .login_user > .register_recover > a > span {
-    color: #8583ab;
-}
-
-#center > .login_div > .login_user > .register_recover > a > img {
+#center > .login_div > .not_login > .register_recover > a > img {
     width: 1rem;
 }
 
+/*endregion*/
+
+/*region not_login*/
+#center > .login_div > .login_user > .login_profile,
+#center > .login_div > .login_user > .login_board{
+    padding: 1rem 0;
+    width: 100%;
+    height: 100%;
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#center > .login_div > .login_user > .login_profile > img {
+    max-height: 10rem;
+    border-radius: 1rem;
+}
+
+#center > .login_div > .login_user > .login_profile > .button-container {
+
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#center > .login_div > .login_user > .login_profile > .button-container > span{
+    margin-bottom: 1rem;
+}
+
+#center > .login_div > .login_user > .login_profile > .button-container > .btn {
+    width: 100%;
+    height: 2.5rem;
+    background-color: #e9e9ef;
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 0.25rem rgba(255, 0, 0, 0.5);
+    padding: 0.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#center > .login_div > .login_user > .login_profile > .button-container > .btn > img {
+    width: 1.5rem;
+}
+
+#center > .login_div > .login_user > .login_profile > a > img {
+    width: 1rem;
+}
+
+#center > .login_div > .login_user > .login_board > .board_list {
+    width: 100%;
+    height: 3rem;
+    border-bottom: 0.0625rem solid red;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#center > .login_div > .login_user > .login_board > .board_list > span {
+    font-size: 1.25rem;
+}
+
+/*endregion*/
+
 #board {
     width: 100%;
+    max-height: 20rem;
+    min-height: 10rem;
+    height: 100%;
 
     align-items: flex-start;
     display: flex;

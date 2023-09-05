@@ -156,32 +156,56 @@
     </div>
     <div class="login_div">
         <h2>프로필</h2>
-        <div class="login_user" th:if="${session.user == null}">
+        <div class="not_login" th:if="${session.user == null}">
             <div class="login_btn">
-                <a th:href="@{/user/login}">
-                    로그인
+                <img th:src="@{/resources/images/warning.png}" alt="">
+                <a class="_object-btn" th:href="@{/user/login}">
+                    <span>로그인</span>
                     <img th:src="@{/resources/images/login.png}" alt="">
                 </a>
-                <img th:src="@{/resources/images/warning.png}" alt="">
-<!--                <span>로그인 후 이용해 주세요.</span>-->
             </div>
             <div class="register_recover">
-                <a th:href="@{/user/register}">
+                <a class="_object-btn" th:href="@{/user/register}">
                     <span>회원가입</span>
                     <img th:src="@{/resources/images/next.png}" alt="">
                 </a>
-                <a th:href="@{/user/recover}">
+                <a class="_object-btn" th:href="@{/user/recover}">
                     <span>아이디 찾기</span>
                     <img th:src="@{/resources/images/next.png}" alt="">
                 </a>
-                <a th:href="@{/user/reset}">
+                <a class="_object-btn" th:href="@{/user/reset}">
                     <span>비밀번호 찾기</span>
                     <img th:src="@{/resources/images/next.png}" alt="">
                 </a>
             </div>
         </div>
-        <div class="not_login" th:if="${session.user != null}">
-            로그인 후
+        <div class="login_user" th:if="${session.user != null}">
+            <div class="login_profile">
+                <img th:src="@{/resources/images/defult_profile.png}" alt="">
+                <div class="button-container">
+                    <span th:if="${session.user == null}">님</span>
+                    <a class="btn">
+                        <span>마이 페이지</span>
+                        <img th:src="@{/resources/images/next.png}" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="login_board">
+                <div class="board_list">
+                    <span>나의 게시물 :</span>
+                    <a>
+                        <span>486623456개</span>
+                    </a>
+                </div>
+                <div class="board_list">
+                    <span>최애의 선수 :</span>
+                    <span>손흥민</span>
+                </div>
+                <div class="board_list">
+                    <span>최애의 구단 :</span>
+                    <span>토트넘</span>
+                </div>
+            </div>
         </div>
     </div>
 </div>

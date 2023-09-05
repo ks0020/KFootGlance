@@ -2,13 +2,16 @@ package com.devkkang.kfootglance.controllers;
 
 import com.devkkang.kfootglance.entities.UserEntity;
 import com.devkkang.kfootglance.entities.UserRegisterContactCodeEntity;
+import com.devkkang.kfootglance.enums.UserCheckIdResult;
 import com.devkkang.kfootglance.enums.UserRegisterResult;
+import com.devkkang.kfootglance.services.UserService;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -18,11 +21,11 @@ import javax.mail.MessagingException;
 @RequestMapping(value = "/user")
 public class UserController {
 
-//    private final UserService userService;
-//    @Autowired
-//    public UserController(UserService userService) {
-//        this.userService = userService;
-//    }
+    private final UserService userService;
+    @Autowired
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
 //    login, recover, reset, register modelAndView
     @RequestMapping(value = "/login",
@@ -61,12 +64,25 @@ public class UserController {
 @ResponseBody
 public String postRegister(UserEntity user,
                            UserRegisterContactCodeEntity userRegisterContactCode) throws MessagingException {
-//    UserRegisterResult result = this.userService.register(user, userRegisterContactCode);
+    UserRegisterResult result = this.userService.register(user, userRegisterContactCode);
     JSONObject responseObject = new JSONObject() {{
-//        put("result", result.name().toLowerCase());
+        put("result", result.name().toLowerCase());
     }};
     return responseObject.toString();
 }
 
+    // 아이디 중복확인
+    @RequestMapping(value = "userIdCount",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseBody
+    public String getUserIdCount(@RequestParam(value = "userId") String userId) {
+
+        UserCheckIdResult result = this.userService.userCheckId(userId);
+        JSONObject responseObject = new JSONObject() {{
+            put("result", result.name().toLowerCase());
+        }};
+        return responseObject.toString();
+    }
 
 }
