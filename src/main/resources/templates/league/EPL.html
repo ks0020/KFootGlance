@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>>K Foot Glance</title>
+    <title>K Foot Glance</title>
     <link rel="icon" th:href="@{/resources/images/logo.png}" type="image/png">
     <link rel="stylesheet" th:href="@{/resources/stylesheets/base.css}">
     <link rel="stylesheet" th:href="@{/resources/stylesheets/league/leauge_base.css}">
@@ -85,9 +85,228 @@
     </ul>
 </div>
 <div id="contentDiv">
-
-    <div>리그 순위 보여줄수 있는 게시판</div>
-    <div>리그 관련 자유 게시판</div>
+    <div class="league_board">
+        <div class="ranking_board">
+            <label class="label">
+                <h2>리그 순위</h2>
+            </label>
+            <table>
+                <thead>
+                <tr>
+                    <th>순위</th>
+                    <th>팀명</th>
+                    <th>경기수</th>
+                    <th>승</th>
+                    <th>무</th>
+                    <th>패</th>
+                    <th>득</th>
+                    <th>실</th>
+                    <th>승점</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>맨시티</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>11</td>
+                    <td>2</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>토트넘</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>11</td>
+                    <td>4</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>리버풀</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>9</td>
+                    <td>3</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>웨스트햄</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>9</td>
+                    <td>4</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>아스날</td>
+                    <td>4</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>0</td>
+                    <td>8</td>
+                    <td>4</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>브라이튼</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>0</td>
+                    <td>1</td>
+                    <td>12</td>
+                    <td>6</td>
+                    <td>9</td>
+                </tr>
+                <!--            <tr>-->
+                <!--                <td></td>-->
+                <!--                <td></td>-->
+                <!--                <td></td>-->
+                <!--                <td></td>-->
+                <!--                <td></td>-->
+                <!--                <td></td>-->
+                <!--                <td></td>-->
+                <!--                <td></td>-->
+                <!--                <td></td>-->
+                <!--            </tr>-->
+                </tbody>
+            </table>
+        </div>
+        <div class="korean_board">
+            <label class="label">
+                <h2>프리미어리그 코리안 리거</h2>
+            </label>
+            <table>
+                <thead>
+                <tr>
+                    <th>순번</th>
+                    <th>이름</th>
+                    <th>리그</th>
+                    <th>경기</th>
+                    <th>득점/도움</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>손흥민</td>
+                    <td>프리미어리그</td>
+                    <td>토트넘 vs 브랜드포드</td>
+                    <td>0/0</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>손흥민</td>
+                    <td>프리미어리그</td>
+                    <td>토트넘 vs 맨유</td>
+                    <td>0/0</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>손흥민</td>
+                    <td>프리미어리그</td>
+                    <td>토트넘 vs 풀햄</td>
+                    <td>0/0</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>손흥민</td>
+                    <td>프리미어리그</td>
+                    <td>토트넘 vs 번리</td>
+                    <td>3/0</td>
+                </tr>
+                <!--            <tr>-->
+                <!--                <td></td>-->
+                <!--                <td></td>-->
+                <!--                <td></td>-->
+                <!--                <td></td>-->
+                <!--                <td></td>-->
+                <!--            </tr>-->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="league_board">
+        <div class="free_board">
+            <label class="label">
+                <h2>자유 게시판</h2>
+                <a href="">더 보기</a>
+            </label>
+            <table>
+                <thead>
+                <tr>
+                    <th>순번</th>
+                    <th>리그</th>
+                    <th>제목</th>
+                    <th>작성일</th>
+                    <th>조회수</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>프리미어리그</td>
+                    <td>손흥민 폼뮈쳐따</td>
+                    <td>2023-08-14</td>
+                    <td>9999</td>
+                </tr>
+                <!--            <tr>-->
+                <!--                <td></td>-->
+                <!--                <td></td>-->
+                <!--                <td></td>-->
+                <!--                <td></td>-->
+                <!--                <td></td>-->
+                <!--            </tr>-->
+                </tbody>
+            </table>
+        </div>
+        <div class="my_board">
+            <label class="label">
+                <h2>나의 게시글</h2>
+                <a href="">더 보기</a>
+            </label>
+            <table>
+                <thead>
+                <tr>
+                    <th>순번</th>
+                    <th>리그</th>
+                    <th>제목</th>
+                    <th>작성일</th>
+                    <th>조회수</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>프리미어리그</td>
+                    <td>손흥민 폼뮈쳐따</td>
+                    <td>2023-08-14</td>
+                    <td>9999</td>
+                </tr>
+                <!--            <tr>-->
+                <!--                <td></td>-->
+                <!--                <td></td>-->
+                <!--                <td></td>-->
+                <!--                <td></td>-->
+                <!--                <td></td>-->
+                <!--            </tr>-->
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 <footer id="footer">
     <div class="sub_logo">
